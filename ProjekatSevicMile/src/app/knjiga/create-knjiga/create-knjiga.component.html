@@ -1,0 +1,36 @@
+<div class="glava">
+    <h2>Napravi formu knjige</h2>
+</div>
+<div class="form-group">
+    <form class="form-signin" (ngSubmit)="createKnjiga(knjigaForm)" #knjigaForm="ngForm">
+        <div class="knjiga-ime">
+            <input class="form-control" type="text" placeholder="Knjiga ime" required name="knjigaIme" #knjigaIme="ngModel" [(ngModel)]="knjiga.ime">
+        </div>
+        <div *ngIf="knjigaIme.errors && knjigaIme.errors.required">Ime knjige je obavezno</div>
+        <div class="knjiga-code">
+            <input class="form-control" type="text" placeholder="Knjiga Code" required minlength="2" name="knjigaCode" #knjigaCode="ngModel" [(ngModel)]="knjiga.code">
+        </div>
+        <div *ngIf="knjigaCode.dirty && knjigaCode.invalid">
+            <div *ngIf="knjigaCode.errors.required">Code knjige je obavezan</div>
+            <div *ngIf="knjigaCode.errors.minlength">Code knjige mora biti najmanje duzine 2</div>
+        </div>
+        <div class="knjiga-opis">
+            <input class="form-control" type="text" placeholder="Knjiga opis" required name="knjigaOpis" #knjigaOpis="ngModel" [(ngModel)]="knjiga.opis">
+        </div>
+        <div *ngIf="knjigaOpis.errors && knjigaOpis.errors.required">Opis knjige je obavezan</div>
+        <div class="knjiga-cena">
+            <input class="form-control" type="number" placeholder="Knjiga Cena" name="knjigaCena" required #knjigaCena="ngModel" [ngModel]="knjiga.cena" (ngModelChange)="setKnjigaCenu($event)">
+        </div>
+        <div *ngIf="knjigaCena.dirty && knjigaCena.invalid">
+            <div *ngIf="knjigaCena.errors.required">Cena knjige je obavezna</div>
+        </div>
+        <div class="knjiga-confirm">
+            <input style="transform: scale(2); padding: 10px;" type="checkbox" name="knjigaConfirm" required [(ngModel)]="confirmed"> Potvrdjujem da su gore informacije tacne!
+        </div>
+        <button class='btn btn-primary' type="submit">Dodaj</button>
+    </form>
+</div>
+<div class="futer">
+    <h4>Ime Knjige je {{knjiga | json}}</h4>
+    <h4>Informacije su potvrdjene: {{confirmed}}</h4>
+</div>

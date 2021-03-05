@@ -1,0 +1,11 @@
+.gl {
+    border: 1px solid black;
+    border-radius: 5px;
+    display: inline-block;
+    padding: 10px;
+    text-align: center;
+}
+
+.knjiga-container {
+    text-align: center;
+}

@@ -1,0 +1,23 @@
+<h3>{{message}}</h3>
+<div class="form-group">
+
+
+
+    <div>
+
+        <form (ngSubmit)="login()" class="form-signin" data-bitwarden-watching="1">
+
+
+            <h1 class="h3 mb-3 font-weight-normal">Molim vas ulogujte se</h1>
+
+            <input class="form-control" type="text" placeholder="korisnicko ime" required name="username" #usernameField="ngModel" [(ngModel)]="username">
+            <div *ngIf="usernameField.errors && usernameField.errors.required">korisnicko ime je obavezno!</div>
+
+            <input class="form-control" type="password" placeholder="sifra" required name="password" #passwordField="ngModel" [(ngModel)]="password">
+            <div *ngIf="passwordField.errors && passwordField.errors.required">sifra je obavezna!</div>
+
+            <button class="btn btn-lg btn-primary btn-block" type="submit">Uloguj se</button>
+        </form>
+    </div>
+
+</div>

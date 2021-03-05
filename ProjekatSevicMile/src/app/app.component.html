@@ -1,0 +1,33 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand">Bibliteka</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+  <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+                <a class="nav-link" routerLink="/login" routerLinkActive="active">
+                Logovanje
+              </a>
+            </li>
+            <li>
+                <a class="nav-link" routerLink="/register" routerLinkActive="active">
+                 Registracija
+            </a>
+            </li>
+            <li>
+                <a class="nav-link" routerLink="/knjige/list" routerLinkActive="active">
+                Lista knjiga
+              </a>
+            </li>
+            <li>
+                <a class="nav-link" routerLink="/knjige/create" routerLinkActive="active">
+                Kreiranje nove knjige
+              </a>
+            </li>
+        </ul>
+    </div>
+</nav>
+
+<router-outlet></router-outlet>

@@ -1,0 +1,11 @@
+<div class="card" style="width: 18rem;">
+    <div class="card-body">
+        <h5 class="card-title">{{knjiga.ime + ' (' + knjiga.code + ')'}}</h5>
+        <h6 class="card-subtitle mb-2 text-muted">$ {{knjiga.cena}}</h6>
+        <p class="card-text">{{knjiga.opis}}</p>
+    </div>
+    <div>
+        <button class="btn btn-success" (click)="onToggleOmiljene($event)" *ngIf="!knjiga.omiljen">Dodaj u omiljene</button>
+        <button class="btn btn-danger" (click)="onToggleOmiljene($event) " *ngIf="knjiga.omiljen ">Izbaci iz omiljenih</button>
+    </div>
+</div>

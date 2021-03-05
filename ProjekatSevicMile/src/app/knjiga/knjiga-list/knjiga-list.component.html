@@ -1,0 +1,9 @@
+<div class="heder">
+    <h2>
+        Pronadjene su {{(knjige$ | async)?.length}} knjige!
+    </h2>
+</div>
+<div class="lista">
+    <app-knjiga-item *ngFor="let knjiga of knjige$ | async" [knjiga]="knjiga">
+    </app-knjiga-item>
+</div>
